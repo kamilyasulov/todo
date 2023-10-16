@@ -1,25 +1,30 @@
 // store.ts
 import { defineStore } from 'pinia';
 
-export const useTasks = defineStore('form', {
+interface Task {
+	id: number;
+	task: string;
+	description: string;
+	deadline: string;
+}
+
+export const useTasks = defineStore({
+	id: 'tasks',
 	state: () => ({
-		tasks: [], // Массив задач
+		tasks: [] as Task[],
 		task: '',
 		description: '',
 		deadline: '',
-		id: '',
 	}),
 	actions: {
-		addTask() {
-			const { task, description, deadline } = this;
+		addTask(this: Task, task: string, description: string, deadline: string) {
 			const id = new Date().getTime();
 			this.tasks.push({ id, task, description, deadline });
-			// Очистить инпуты после добавления задачи
 			this.task = '';
 			this.description = '';
 			this.deadline = '';
 		},
-		deleteTask(taskId) {
+		deleteTask(this: Task, taskId: number) {
 			const index = this.tasks.findIndex((task) => task.id === taskId);
 			if (index !== -1) {
 				this.tasks.splice(index, 1);
@@ -27,3 +32,4 @@ export const useTasks = defineStore('form', {
 		},
 	},
 });
+

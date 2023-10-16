@@ -21,7 +21,7 @@ import { useTasks } from '/store/tasks';
 const formStore = useTasks();
 
 const addTask = () => {
-	formStore.addTask();
+	formStore.addTask(formStore.task, formStore.description, formStore.deadline);
 };
 </script>
 
