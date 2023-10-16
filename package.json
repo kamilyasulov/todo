@@ -1,0 +1,67 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "prepare": "husky install",
+    "lint": "eslint --ext \".ts,.js,.vue\" --ignore-path .eslintignore .",
+    "lintfix": "eslint --fix --ext \".ts,.js,.vue\" --ignore-path .eslintignore .",
+    "taze": "taze",
+    "taze:major": "taze major"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue,html}": [
+      "pnpm lintfix"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": ".husky/git/commitizen.js"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.2.0",
+    "@commitlint/config-conventional": "^17.2.0",
+    "@headlessui/vue": "^1.7.12",
+    "@heroicons/vue": "^2.0.17",
+    "@nuxt/image-edge": "1.0.0-28008586.381b906",
+    "@nuxtjs/color-mode": "^3.2.0",
+    "@nuxtjs/critters": "^0.4.0",
+    "@nuxtjs/eslint-config": "^12.0.0",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@nuxtjs/google-fonts": "^3.0.0",
+    "@nuxtjs/html-validator": "^1.2.4",
+    "@nuxtjs/i18n": "8.0.0-beta.11",
+    "@pinia/nuxt": "^0.4.8",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "@vue-macros/nuxt": "^1.2.8",
+    "@vue-macros/short-vmodel": "^1.2.4",
+    "@vueuse/core": "^9.13.0",
+    "@vueuse/nuxt": "^9.13.0",
+    "autoprefixer": "^10.4.14",
+    "cz-customizable": "^7.0.0",
+    "eslint": "^8.38.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-import-resolver-typescript": "^3.5.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-nuxt": "^3.2.0",
+    "eslint-plugin-vue": "^9.6.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.1",
+    "nuxt": "^3.3.3",
+    "pinia": "^2.0.34",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.3.1",
+    "taze": "^0.9.1",
+    "typescript": "^5.0.4"
+  }
+}

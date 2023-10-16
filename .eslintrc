@@ -1,0 +1,51 @@
+{
+	"root": true,
+	"env": {
+		"browser": true,
+		"node": true
+	},
+	"extends": [
+		"@nuxtjs/eslint-config-typescript",
+		"plugin:import/recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:import/typescript",
+		"airbnb-base",
+		"airbnb-typescript/base",
+		"plugin:vue/vue3-recommended", // https://eslint.vuejs.org/rules/
+		"plugin:nuxt/recommended"
+	],
+	"parser": "vue-eslint-parser",
+	"parserOptions": {
+		"extraFileExtensions": [".vue"],
+		"parser": "@typescript-eslint/parser",
+		"project": "./tsconfig.json"
+	},
+	"plugins": [],
+	"rules": {
+		"import/extensions": ["error", "ignorePackages", {
+			"": "never", // index files
+			"js": "never",
+			"jsx": "never",
+			"ts": "never",
+			"tsx": "never"
+		}],
+		"linebreak-style": "off",
+		"@typescript-eslint/no-unused-vars": "off",
+		"@typescript-eslint/quotes": "off",
+		"@typescript-eslint/indent": "off",
+		"@typescript-eslint/semi": "off",
+		"vue/no-multiple-template-root": "off",
+		"vue/html-indent": ["error", "tab"],
+		"quotes": ["error", "double"],
+		"semi": ["error", "never"],
+		"indent": ["error", "tab"],
+		"no-tabs": "off",
+		"consistent-return": "off",
+		"vue/multi-word-component-names": "off",
+		"vue/singleline-html-element-content-newline": ["error", {
+			"ignoreWhenNoAttributes": true,
+			"ignoreWhenEmpty": true,
+			"ignores": ["pre", "textarea", "h1", "h2", "h3", "h4", "h5", "h6", "p"]
+		}]
+	}
+}

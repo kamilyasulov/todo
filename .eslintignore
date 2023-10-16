@@ -1,0 +1,7 @@
+.husky
+.nuxt
+node_modules
+components.d.ts
+nuxt.d.ts
+dist
+.output
